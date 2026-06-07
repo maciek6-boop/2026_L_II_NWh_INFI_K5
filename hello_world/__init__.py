@@ -1,3 +1,4 @@
+# noqa: E402
 from flask import Flask
 app = Flask(__name__)
 
