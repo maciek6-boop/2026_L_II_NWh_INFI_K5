@@ -1,29 +1,22 @@
 version: 2.1 
-
  
-
 jobs: 
-
   build-and-test:  
-
     machine: 
-
       image: ubuntu-2004:current 
-
         
-
     steps: 
-
       - checkout 
-
-      - run: make deps 
-
-      - run: make test       
-
+      - run: 
+          name: Install dependencies
+          command: make deps 
+      - run: 
+          name: Run Linter
+          command: make lint
+      - run: 
+          name: Run Tests
+          command: make test       
 workflows: 
-
   basic:  
-
     jobs: 
-
       - build-and-test
