@@ -1,4 +1,4 @@
-.PHONY: deps lint test run
+.PHONY: deps lint test run docker_build
 
 deps:
 	pip install -r requirements.txt; \
@@ -12,3 +12,6 @@ test:
 
 run:
 	python -m flask --app hello_world run
+
+docker_build:
+	docker build -t hello-world-printer .
