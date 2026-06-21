@@ -1,6 +1,6 @@
-version: 2.1 
- 
-jobs: 
+version: 2.1
+
+jobs:
   build-and-test:  
     machine: 
       image: ubuntu-2004:current 
@@ -16,6 +16,10 @@ jobs:
       - run: 
           name: Run Tests
           command: make test       
+      - run:
+          name: Build Docker Image
+          command: make docker_build
+
 workflows: 
   basic:  
     jobs: 
